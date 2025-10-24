@@ -22,6 +22,7 @@ public class HelloController {
         String message = helloService.getGreeting();
         Map<String, String> response = new HashMap<>();
         response.put("message", message);
+        response.put("success", "true");
 
         return ResponseEntity.ok(response);
     }

@@ -1,0 +1,225 @@
+{
+  "info": {
+    "name": "Tricol - Gestion Fournisseurs API",
+    "description": "Collection de requêtes pour tester l'API REST de gestion des fournisseurs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/springmvc-rest",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Fournisseurs",
+      "item": [
+        {
+          "name": "Get All Fournisseurs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"]
+            }
+          }
+        },
+        {
+          "name": "Get All Fournisseurs Sorted by Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs?sortBy=nom",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "nom"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Fournisseurs by Ville",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs?ville=Casablanca",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"],
+              "query": [
+                {
+                  "key": "ville",
+                  "value": "Casablanca"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Fournisseurs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs?search=textile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "textile"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Fournisseur by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Fournisseur",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"societe\": \"Textile Pro SA\",\n  \"adresse\": \"123 Boulevard Mohammed V\",\n  \"contact\": \"Ahmed Alami\",\n  \"email\": \"contact@textilepro.ma\",\n  \"telephone\": \"+212600000000\",\n  \"ville\": \"Casablanca\",\n  \"ice\": \"001234567890123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"]
+            }
+          }
+        },
+        {
+          "name": "Create Fournisseur 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"societe\": \"Confection Elite\",\n  \"adresse\": \"45 Rue des Artisans\",\n  \"contact\": \"Fatima Bennani\",\n  \"email\": \"f.bennani@confection-elite.ma\",\n  \"telephone\": \"+212611111111\",\n  \"ville\": \"Rabat\",\n  \"ice\": \"001234567890124\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"]
+            }
+          }
+        },
+        {
+          "name": "Create Fournisseur 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"societe\": \"Maroc Tissus SARL\",\n  \"adresse\": \"78 Avenue Hassan II\",\n  \"contact\": \"Youssef Tazi\",\n  \"email\": \"y.tazi@maroctissus.ma\",\n  \"telephone\": \"+212622222222\",\n  \"ville\": \"Casablanca\",\n  \"ice\": \"001234567890125\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs"]
+            }
+          }
+        },
+        {
+          "name": "Update Fournisseur",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"societe\": \"Textile Pro SA - Updated\",\n  \"adresse\": \"456 Boulevard Zerktouni\",\n  \"contact\": \"Ahmed Alami\",\n  \"email\": \"contact@textilepro.ma\",\n  \"telephone\": \"+212600000000\",\n  \"ville\": \"Casablanca\",\n  \"ice\": \"001234567890123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Fournisseur",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Count All Fournisseurs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs/count",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs", "count"]
+            }
+          }
+        },
+        {
+          "name": "Count Fournisseurs by Ville",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/fournisseurs/count?ville=Casablanca",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "fournisseurs", "count"],
+              "query": [
+                {
+                  "key": "ville",
+                  "value": "Casablanca"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
